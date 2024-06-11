@@ -1,9 +1,7 @@
 import 'dart:ui';
 
 import 'package:aurora_notebook/colors/dark_theme_color.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class MyBottomBar extends StatefulWidget {
   const MyBottomBar({Key? key});
@@ -27,7 +25,7 @@ class _MyBottomBarState extends State<MyBottomBar> {
             height: 30,
             width: 30,
             decoration: BoxDecoration(
-              color: phxcPrimaryColorsD[500],
+              color: phxcPrimaryColorsD[800],
               borderRadius: BorderRadius.circular(100),
             ),
           ),
@@ -40,7 +38,7 @@ class _MyBottomBarState extends State<MyBottomBar> {
             height: 30,
             width: 30,
             decoration: BoxDecoration(
-              color: phxcPrimaryColorsD[800],
+              color: phxcPrimaryColorsD[500],
               borderRadius: BorderRadius.circular(100),
             ),
           ),

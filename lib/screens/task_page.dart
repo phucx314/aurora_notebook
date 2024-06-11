@@ -4,14 +4,16 @@ import 'package:aurora_notebook/components/home_bottom_bar.dart';
 import 'package:aurora_notebook/components/note_card.dart';
 import 'package:aurora_notebook/components/notes_list.dart';
 import 'package:aurora_notebook/components/search_bar.dart';
+import 'package:aurora_notebook/components/task_card.dart';
 import 'package:flutter/material.dart';
 
 import '../colors/dark_theme_color.dart';
+import '../components/tasks_list.dart';
 
-class NotePage extends StatelessWidget {
-  NotePage({super.key, });
+class TaskPage extends StatelessWidget {
+  final TasksList tasksList = TasksList();
 
-  final NotesList notesList = NotesList();
+  TaskPage({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -58,19 +60,21 @@ class NotePage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: ListView.builder(
-                    itemCount: notesList.notes.length,
+                    itemCount: tasksList.sampleTasks.length,
                     itemBuilder: (context, index) {
-                      final note = notesList.notes[index];
-                      return NoteCard(
-                        pictureURL: note['pictureURL']!,
-                        title: note['title']!,
-                        content: note['content']!,
-                        date: note['date']!,
+                      final task = tasksList.sampleTasks[index];
+                      return TaskCard(
+                        time: task['dateTime']!,
+                        isCompleted: false,
+                        title: task['title']!,
                       );
                     },
                   ),
                 ),
               ),
+
+              // // pad so voi cai bottom bar va nut add (dua vao list)
+              // SizedBox(height: 25 + 60 + 25,),
               
               // bottom bar
               MyBottomBar(),
